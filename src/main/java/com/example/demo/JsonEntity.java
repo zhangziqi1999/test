@@ -3,20 +3,20 @@ package com.example.demo;
 import java.io.Serializable;
 
 public class JsonEntity implements Serializable {
-    DataEntity dataEntity;
+    String object;
     String sign;
 
-    public JsonEntity(DataEntity dataEntity, String sign) {
-        this.dataEntity = dataEntity;
+    public JsonEntity(String object, String sign) {
+        this.object = object;
         this.sign = sign;
     }
 
-    public DataEntity getDataEntity() {
-        return dataEntity;
+    public String getObject() {
+        return object;
     }
 
-    public void setDataEntity(DataEntity dataEntity) {
-        this.dataEntity = dataEntity;
+    public void setObject(String object) {
+        this.object = object;
     }
 
     public String getSign() {

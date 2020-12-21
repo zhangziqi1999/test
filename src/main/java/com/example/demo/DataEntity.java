@@ -13,6 +13,9 @@ public class DataEntity implements Serializable {
     String unit;
     String serialNumber;
 
+    public DataEntity() {
+    }
+
     public DataEntity(String range, Double standardValue, String taskCode, Double testValue, String instrumentCode, String testStandardValue, String img, String unit, String serialNumber) {
         this.range = range;
         this.standardValue = standardValue;
