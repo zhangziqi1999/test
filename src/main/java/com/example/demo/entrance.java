@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class entrance {
-    @PostMapping("/upload")
+    @PostMapping("/restAuth")
     String getMessage(@RequestBody String json){
         System.out.println(json);
         return "ok";
