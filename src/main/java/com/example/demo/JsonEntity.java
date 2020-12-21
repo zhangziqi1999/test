@@ -1,6 +1,8 @@
 package com.example.demo;
 
-public class JsonEntity {
+import java.io.Serializable;
+
+public class JsonEntity implements Serializable {
     DataEntity dataEntity;
     String sign;
 
