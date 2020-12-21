@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class entrance {
     @PostMapping("/upload")
-    String getMessage(@RequestBody String json){
-        System.out.println(json);
+    String getMessage(@RequestBody JsonEntity jsonEntity){
+        System.out.println(jsonEntity.getDataEntity());
         return "ok";
     }
 }
