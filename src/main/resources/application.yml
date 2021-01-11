@@ -1,6 +1,6 @@
 server:
   port: 8001
-  address: ::1
+  address: :::
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/databases?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
