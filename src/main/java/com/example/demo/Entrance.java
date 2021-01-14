@@ -4,6 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import java.io.File;
+import java.io.IOException;
 
 @RestController
 public class Entrance {
@@ -26,5 +29,26 @@ public class Entrance {
     @CrossOrigin(origins = "*", maxAge = 3600)
     DataEntity[] getMessage(){
         return dao.getData();
+    }
+
+    @PostMapping(value = "/fileUpload")
+    public String fileUpload(@RequestParam(value = "file") MultipartFile file) {
+        String fileName = file.getOriginalFilename();
+        System.out.println(fileName);
+        String suffixName = null;
+        if (fileName != null) {
+            suffixName = fileName.substring(fileName.lastIndexOf("."));
+        }
+        String filePath = "/images/";
+        File dest = new File(filePath + fileName);
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdirs();
+        }
+        try {
+            file.transferTo(dest);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fileName;
     }
 }
